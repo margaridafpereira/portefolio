@@ -653,6 +653,33 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; 
   :root:not([data-theme="light"]) .org .inesc-dark  { display: block; }
 }
 
+.rail .live-link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.rail .access-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: var(--ink-faint);
+}
+
+.org .tag {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--figure);
+  background: var(--figure-dim);
+  border: 1px solid var(--figure-mid);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
 :root[data-theme="dark"] .org .inesc-light { display: none; }
 :root[data-theme="dark"] .org .inesc-dark  { display: block; }
 
@@ -749,6 +776,10 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; 
   .disclaimer { margin-top: 1.2rem; padding-top: 0.7rem; font-size: 7.6pt; break-inside: avoid; }
 }
 
+@media print {
+  .research.personal { break-before: page; margin-top: 0; }
+}
+
 /* ── on screen, present the printed document as a sheet ─────────────── */
 
 @media screen {
@@ -822,7 +853,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; 
       <div class="cap">
         <h4>Backend</h4>
         <p class="claim">Services built from the ground up, including a runtime that loads business rules as plugins.</p>
-        <p class="tok">.NET · ASP.NET Core · BFF pattern · MediatR · AutoMapper · FluentValidation · Quartz · dynamic DLL loading (C#) · Python</p>
+        <p class="tok">.NET · ASP.NET Core · minimal APIs · ASP.NET Core Identity · modular monolith · BFF pattern · MediatR · AutoMapper · FluentValidation · Quartz · dynamic DLL loading (C#) · Python</p>
       </div>
 
       <div class="cap">
@@ -840,7 +871,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; 
       <div class="cap">
         <h4>Data</h4>
         <p class="claim">Relational and document models, versioned migrations, a live store moved without downtime.</p>
-        <p class="tok">SQL Server · DB2 · MongoDB · EF Core · Liquibase · ETL pipelines</p>
+        <p class="tok">SQL Server · DB2 · MongoDB · PostgreSQL · SQLite · EF Core · EF migrations · Liquibase · ETL pipelines</p>
       </div>
 
       <div class="cap">
@@ -851,8 +882,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; 
 
       <div class="cap">
         <h4>Machine learning</h4>
-        <p class="claim">Models designed, trained and evaluated end to end on medical imaging.</p>
-        <p class="tok">Python · PyTorch · U-Net · CNNs · GANs · autoencoders · SSIM · PSNR · FID · Dice</p>
+        <p class="claim">Models designed, trained and evaluated end to end on medical imaging, and LLM assistants wired to real data through tools.</p>
+        <p class="tok">Python · PyTorch · U-Net · CNNs · GANs · autoencoders · SSIM · PSNR · FID · Dice · LLM tool calling · Gemini</p>
       </div>
 
       <div class="cap">
@@ -864,13 +895,13 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; 
       <div class="cap">
         <h4>Delivery &amp; operations</h4>
         <p class="claim">Deployment automated across every environment, built for observability.</p>
-        <p class="tok">GitLab CI/CD · Jenkins · IBM RTC · Docker · Kubernetes · Helm · IIS · OpenTelemetry · Kibana · Grafana · SonarQube</p>
+        <p class="tok">GitLab CI/CD · GitHub Actions · Azure App Service · Jenkins · IBM RTC · Docker · Kubernetes · Helm · IIS · OpenTelemetry · Kibana · Grafana · SonarQube</p>
       </div>
 
       <div class="cap">
         <h4>Ways of working</h4>
         <p class="claim">Contract first, decisions written down, and AI tools used to move faster across parallel work.</p>
-        <p class="tok">Scrum · merge requests · code review · AI-assisted development · MSTest · SpecFlow · WireMock · Postman · coverage gates · ADRs</p>
+        <p class="tok">Scrum · merge requests · code review · AI-assisted development · MSTest · xUnit · SpecFlow · WireMock · Postman · coverage gates · ADRs</p>
       </div>
     </div>
   </section>
@@ -1131,6 +1162,49 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; 
         <p class="stack"><em>Stack</em>Python · PyTorch · U-Net · convolutional neural networks · generative adversarial networks · autoencoders · image registration · SSIM · PSNR · FID · Dice</p>
 
         <p class="cite"><em>Deep Alignment and Super-Resolution of Computed Tomography Coronary Angiography Images</em>, MSc dissertation, Master in Biomedical Engineering, Faculdade de Engenharia da Universidade do Porto, supervised by João Manuel Pedrosa, PhD.<br>Full text: <a href="https://repositorio-aberto.up.pt/handle/10216/161287">repositorio-aberto.up.pt/handle/10216/161287</a><br>Work from this research was presented at <strong>RECPAD 2023</strong>, the Portuguese Conference on Pattern Recognition: <a href="https://drive.google.com/file/d/1zem-NYHW5BrJN411ep1cRDM-S4cBR4Ks/view">paper</a>.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="research personal">
+    <article class="entry">
+      <div class="rail">
+        <div class="org"><span class="tag">Personal project</span></div>
+        <p class="period">September 2026</p>
+        <h3>Personal portal</h3>
+        <p class="role">Side project · Full-stack · Modular monolith · Rules engine · AI assistant</p>
+        <span class="status">Live on Azure</span>
+        <a class="live-link" href="https://personal-portal-ejgafzfrehhmbpd0.spaincentral-01.azurewebsites.net/">Open the portal &#8599;</a>
+        <p class="access-note">Invite-only, as it holds personal and financial data. Access on request.</p>
+        <dl class="ledger">
+          <div><dt>Sections behind one contract</dt><dd>4</dd></div>
+          <div><dt>Public benefits modelled</dt><dd>7</dd></div>
+          <div><dt>Broker export formats parsed</dt><dd>6</dd></div>
+          <div><dt>Official data sources</dt><dd>4</dd></div>
+          <div><dt>Automated tests</dt><dd>164</dd></div>
+        </dl>
+      </div>
+
+      <div class="body">
+        <p class="lead">A personal area for the paperwork of adult life in Portugal. One profile, filled in once, drives every section, and the sections talk to each other: a buyer under 35 sees on each house whether it qualifies for the IMT exemption and the public guarantee.</p>
+
+        <h4>What it does</h4>
+        <ul class="did">
+          <li><strong>Benefits and deadlines</strong>: which of seven public benefits you are probably entitled to, each rule tested and explained; the tax and social-security deadlines ahead, exported to a calendar and emailed before each one.</li>
+          <li><strong>Property radar</strong>: saved searches across five portals, and followed listings with price history and €/m² against the INE median for the municipality.</li>
+          <li><strong>Car</strong>: inspection, road tax, insurance and service dates, and the cheapest fuel and EV charging nearby, from DGEG and Mobi.E.</li>
+          <li><strong>IRS on investments</strong>: imports from six brokers (DEGIRO, Interactive Brokers, eToro, Revolut, Trading 212, XTB), FIFO per ISIN, Banco de Portugal rates, laid out as the Annex J tables.</li>
+        </ul>
+
+        <h4>How I built it</h4>
+        <ul class="did">
+          <li><strong>A modular monolith.</strong> Each section is a module behind one contract: the profile fields it reads, its dashboard card, its deadlines and its assistant tools. A new section touches nothing else.</li>
+          <li><strong>An AI assistant over your own data</strong>: an OpenAI-compatible client calling read-only tools that each module declares, with model fallback when the free tier is overloaded.</li>
+          <li><strong>Official and open data only.</strong> No scraping of property portals, a decision taken after reading their terms and the database-rights case law.</li>
+          <li><strong>Shipped like production</strong>: ASP.NET Core Identity, EF Core migrations, and a GitHub Actions pipeline that runs the tests and deploys to Azure.</li>
+        </ul>
+
+        <p class="stack"><em>Stack</em>.NET 9 · ASP.NET Core minimal APIs · ASP.NET Core Identity · EF Core · SQLite · PostgreSQL · React 19 · TypeScript · Vite · React Router · LLM tool calling (Gemini, OpenAI-compatible API) · xUnit · WebApplicationFactory · GitHub Actions · Azure App Service</p>
       </div>
     </article>
   </section>
